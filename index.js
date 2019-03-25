@@ -1,5 +1,7 @@
 const db = require('./data/dbHelpers')
 
+const projectID = 1;
+
 const newProject = {
   project_name: "Learn PostGreSQL",
   project_description: "Learn how to incorporate the PostgreSQL database into a project in order to familiarize myself with it",
@@ -7,8 +9,8 @@ const newProject = {
 }
 
 const newAction = {
-  action_description: 'Research PostgreSQL',
-  notes: 'https://www.postgresql.org/',
+  action_description: 'Design Database Tables',
+  notes: 'Determine table relationships, setting up primary and foreign keys as necessary',
   is_complete: false,
   project_id: 1
 }
@@ -20,10 +22,17 @@ const newAction = {
 //   console.log(err)
 // })
 
-db.addAction(newAction)
-.then(action => {
-  console.log('action', action)
+// db.addAction(newAction)
+// .then(action => {
+//   console.log('action', action)
+// }).catch(err => {
+//   console.log(err)
+// })
+
+db.getProject(projectID)
+.then(project => {
+  console.log('project', project)
 }).catch(err => {
-  console.log(err)
+  console.log('issue with project')
 })
 
