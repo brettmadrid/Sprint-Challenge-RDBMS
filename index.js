@@ -1,6 +1,6 @@
 const db = require('./data/dbHelpers')
 
-const projectID = 1;
+const projectID = 2;
 
 const newProject = {
   project_name: "Learn PostGreSQL",
@@ -29,10 +29,10 @@ const newAction = {
 //   console.log(err)
 // })
 
-// db.getProject(projectID)
-// .then(project => {
-//   console.log('project', project)
-// }).catch(err => {
-//   console.log('issue with project')
-// })
+db.getProject(projectID)
+.then(project => {
+  console.log('project', project)
+}).catch(err => {
+  console.log('issue with project')
+})
 
