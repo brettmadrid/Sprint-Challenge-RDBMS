@@ -29,10 +29,10 @@ const newAction = {
 //   console.log(err)
 // })
 
-db.getProject(projectID)
-.then(project => {
-  console.log('project', project)
-}).catch(err => {
-  console.log('issue with project')
-})
+// db.getProject(projectID)
+// .then(project => {
+//   console.log('project', project)
+// }).catch(err => {
+//   console.log('issue with project')
+// })
 
