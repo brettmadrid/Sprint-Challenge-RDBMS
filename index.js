@@ -6,9 +6,24 @@ const newProject = {
   completed: false
 }
 
-db.addProject(newProject)
-.then(project => {
-  console.log('project', project)
+const newAction = {
+  action_description: 'Research PostgreSQL',
+  notes: 'https://www.postgresql.org/',
+  is_complete: false,
+  project_id: 1
+}
+
+// db.addProject(newProject)
+// .then(project => {
+//   console.log('project', project)
+// }).catch(err => {
+//   console.log(err)
+// })
+
+db.addAction(newAction)
+.then(action => {
+  console.log('action', action)
 }).catch(err => {
   console.log(err)
 })
+

@@ -9,4 +9,13 @@ module.exports = {
     return db('projects')
     .insert(project)
   },
+
+  addAction: (action) => {
+    const projectID = action.project_id;
+    const subQuery = db.select('projectID').from('projects')
+      return (
+        db('actions').insert(action)
+        .whereIn('projectID', subQuery)
+      )
+  },
 }
