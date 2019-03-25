@@ -3,10 +3,6 @@ const db = require('./data/dbHelpers')
 
 const projectsRouter = require("./data/routers/projectsRouter.js");
 
-const server = express();
-
-server.use(express.json());
-
 const projectID = 2;
 
 const newProject = {
