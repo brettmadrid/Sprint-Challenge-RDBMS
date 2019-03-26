@@ -7,6 +7,17 @@ const db = knex(dbConfig.development);
 const mappers = require('./mappers');
 
 module.exports = {
+
+  getProjects: () => {
+    return db('projects')
+  },
+
+  deleteProject: function(id) {
+    return db('projects')
+      .where('id', id)
+      .del();
+  },
+
   addProject: (project) => {
     return db('projects')
     .insert(project)
