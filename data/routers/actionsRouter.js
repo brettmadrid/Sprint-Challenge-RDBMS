@@ -6,44 +6,44 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    const projects = await db.getProjects();
-    res.status(200).json(projects);
+    const actions = await db.getActions();
+    res.status(200).json(actions);
   } catch (error) {
     res.status(500).json({
-    message: "Error retrieving projects"
+    message: "Error retrieving actions"
     });
   }
 });
 
 router.get('/:id', async (req, res) => {
   try {
-    const project = await db.getProject(req.params.id)
-    res.status(200).json(project);
+    const actions = await db.getProjectActions(req.params.id)
+    res.status(200).json(actions);
   } catch (error) {
     res.status(500).json({
-      message: "Error retrieving projects"
+      message: "Error retrieving actions"
       });
   }
 })
 
 router.delete('/:id', async (req, res) => {
   try {
-    const project = await db.deleteProject(req.params.id);
-    res.status(200).json({ removed: project });
+    const action = await db.deleteAction(req.params.id);
+    res.status(200).json({ removed: action });
   } catch (error) {
     res.status(500).json({
-      err: "Error removing the project. Check to see if project exists!"
+      err: "Error removing the action!"
     });
   }
 })
 
 router.post("/", async (req, res) => {
   try {
-    const project = await db.addProject(req.body);
-    res.status(201).json(project);
+    const action = await db.addAction(req.body);
+    res.status(201).json(action);
   } catch (error) {
     res.status(500).json({
-      message: "Error adding the the project."
+      message: "Error adding the the action."
     });
   }
 });

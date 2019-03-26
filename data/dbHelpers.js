@@ -58,4 +58,14 @@ module.exports = {
       .where('project_id', projectId)
       .then(actions => actions.map(action => mappers.actionToBody(action)));
   },
+
+  getActions: function() {
+    return db('actions')
+  },
+
+  deleteAction: function(id) {
+    return db('actions')
+      .where('id', id)
+      .del();
+  },
 }
